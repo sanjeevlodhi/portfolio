@@ -27,7 +27,8 @@
 
 <body>
     <!-- Loader animation -->
-    <!-- <div id="loader">
+    
+    <div id="loader">
         <span></span>
         <ul>
             <li></li>
@@ -38,7 +39,8 @@
             <li></li>
             <li></li>
         </ul>
-    </div> -->
+    </div>
+
     <!-- Header section start -->
     <header id="Header">
         <div class="header_section">
@@ -90,7 +92,9 @@
                     </div>
                 </div>
                 <div class="hero_img">
-                    <img src="images/hero_img1.png" alt="">
+                    <span>
+                        <img src="images/hero_img1.png" alt="">
+                    </span>
                 </div>
             </div>
         </div>
@@ -100,7 +104,7 @@
         <div class="container">
             <div class="about_main">
                 <div class="about_img">
-
+                    <img src="images/about_img.png" alt="">
                 </div>
                 <div class="about_content">
                     <h2>About <span>Me</span></h2>
@@ -317,7 +321,7 @@
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In iste quaerat impedit provident autem
                         repudiandae incidunt iusto architecto voluptate vitae?</p>
                     <div class="list_item">
-                        <li><i class="fa-solid fa-share-nodes"></i><a
+                        <li><i class="fas fa-paper-plane"></i><a
                                 href="mailto:lodhisanjeev792@gmail.com">lodhisanjeev792@gmail.com</a></li>
                         <li><i class="fa-solid fa-phone"></i><a href="tel:+917772974268">+917772974268</a></li>
                     </div>
@@ -329,12 +333,12 @@
                     </div>
                 </div>
                 <div class="contect_form">
-                    <form onsubmit="return data()" action="form.html">
-                        <input type="" placeholder="Enter Your Name" required id="n1">
-                        <input type="email" placeholder="Enter Your Email" required id="n2">
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbxTARxlPiwSViZhlYvrAgLOEzPIi2GadnkpShLaKmVYdNnCrQFrF7-ji0cjW21MhDaH/exec" name="contact-form">
+                        <input type="text" name="Name" placeholder="Enter Your Name" required id="n1">
+                        <input type="email" name="Email" placeholder="Enter Your Email" required id="n2">
 
-                        <input type="" placeholder="Enter Your Subject" required id="n3">
-                        <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required
+                        <input type="text" name="Subject" placeholder="Enter Your Subject" required id="n3">
+                        <textarea name="Message" id="" cols="40" rows="10" placeholder="Enter Your Message" required
                             id="n4"></textarea>
                         <input type="submit" value="Submit" class="send">
                     </form>
@@ -344,7 +348,7 @@
     </section>
 
     <!-- JS file link -->
-    <script src="min.js"></script>
+    <script src="js/min.js"></script>
 </body>
 
 </html>

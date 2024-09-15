@@ -38,7 +38,7 @@ body {
     position: fixed;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
-    animation: slideDown 0.35s ease-out;
+    animation: slideDown 1s ease-out;
     width: 100%;
     z-index: 999;
 }
@@ -86,7 +86,7 @@ body {
 .logo a {
     color: #fff;
     font-size: 27px;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 .navbar ul {
@@ -95,7 +95,7 @@ body {
 }
 
 .navbar ul li {
-    padding-left: 35px;
+    padding: 0 21px;
 }
 
 /* Div target to nth child */
@@ -127,6 +127,7 @@ body {
 .navbar ul li:nth-child(6) {
     animation: slideTop 3.5s ease forwards;
     animation-delay: calc(.2s* var(--i));
+    padding-right: 0;
 }
 
 /* Div target to nth child */
@@ -134,8 +135,8 @@ body {
 .navbar a {
     color: var(--text-color);
     text-transform: capitalize;
-    font-size: 17px;
-    transition: all ease .3s;
+    font-size: 18px;
+    position: relative;
     opacity: 0;
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
@@ -151,7 +152,7 @@ body {
 .hero {
     width: 100%;
     float: left;
-    height: 100vh;
+    padding: 70px 0;
     display: flex;
     align-items: center;
 }
@@ -163,6 +164,7 @@ body {
 
 .hero_content {
     color: var(--text-color);
+    padding-right: 10px;
 }
 
 .hero_content h3 {
@@ -248,17 +250,16 @@ body {
 
 .hero_img {
     width: 50%;
-    height: 485px;
+    /* height: 485px; */
     position: relative;
     opacity: 0;
     animation: slideRight 2s ease forwards;
     animation-delay: 1s;
 }
 
-.hero_img:before {
-    content: '';
-    width: 483px;
-    height: 483px;
+.hero_img span{
+    width: 425px;
+    height: 425px;
     background: #0ef;
     position: absolute;
     top: 0;
@@ -302,6 +303,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.about_img{
+    width: 50%;
+    float: left;
+    position: relative;
+    opacity: 0;
+    animation: slideRight 2s ease forwards;
+}
+
+.about_img img{
+    filter: drop-shadow(5px 2px 5px #00000080);
+    max-width: 570px;
+    max-height: 570px;
 }
 
 .about_content {
@@ -370,9 +385,10 @@ body {
 
 .service_col div {
     font-size: 13px;
-    font-weight: 13px;
+    font-weight: 300;
     padding: 40px;
     background-color: transparent;
+    overflow: hidden;
     border-right: 10px;
     border-radius: 20px;
     box-shadow: 1px 1px 20px #012290f7,
@@ -416,6 +432,8 @@ body {
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
 }
 
 .btn_btn {
@@ -816,6 +834,7 @@ body {
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
     margin: auto;
+    text-transform: capitalize;
 }
 
 
@@ -937,7 +956,7 @@ body {
 
 .contact .title {
     font-size: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     text-align: center;
     animation: slideTop 1s ease forwards;
 }
@@ -1115,7 +1134,7 @@ body {
 #loader {
     height: 100%;
     width: 100%;
-    background-color: #000000b8;
+    background-color: #00000070;
     position: fixed;
     z-index: 99999;
     top: 0;
@@ -1262,7 +1281,9 @@ body {
 
 .navbar.show {
     display: block;
+    transform-origin: top;
     transform: scaleX(1);
+    min-height: 213px;
 }
 
 
@@ -1334,12 +1355,26 @@ body {
     .container {
         max-width: 1000px;
     }
+
+    .hero_img img{
+        width: 100%;
+        height: 350px;
+    }
 }
 
 @media screen and (max-width: 1100px) {
 
     .container {
         max-width: 900px;
+    }
+
+    .about_img{
+        height: 600px;
+    }
+
+    .about_img img{
+        max-height: 600px;
+        height: 600px;
     }
 
     .service_row {
@@ -1354,22 +1389,48 @@ body {
         padding-left: 50px;
     }
 
-    .hero_img {
-        height: 0;
+    .hero_img span {
+        width: 350px;
+        height: 350px;
     }
 
-    .hero_img:before {
-        width: 100%;
-        height: 320px;
+    .contact .title {
+        text-align: left;
+        padding-bottom: 28px;
     }
 
-    .hero_img img {
-        height: auto;
+    .contect_form form input {
         width: 100%;
+    }
+
+    .contect_form form textarea {
+        width: 100%;
+    }
+
+    .hero_content{
+        width: 50%;
+    }
+
+    .hero_content h3 {
+        font-size: 29px;
+    }
+
+    .hero_content h1 {
+        font-size: 40px;
+        margin: 2px 0;
+    }
+
+    .hero_content p{
+        font-size: 17px;
     }
 }
 
 @media screen and (max-width: 992px) {
+
+    #loader {
+        display: none;
+        opacity: 0;
+    }
 
     .container {
         max-width: 750px;
@@ -1383,25 +1444,51 @@ body {
         padding-left: 50px;
     }
 
+    .about_main{
+        flex-direction: column-reverse;
+    }
+
+    .about_img{
+        width: 100%;
+    }
+
+    .about_img img{
+        max-height: 570px;
+        height: 570px;
+    }
+
     .hero_row {
         flex-direction: column;
+    }
+
+    .hero_content{
+        width: 100%;
     }
 
     .hero_img {
         width: 100%;
         text-align: center;
-        height: auto;
+        margin-top: 60px;
+        height: 425px;
     }
 
-    .hero_img:before {
-        content: '';
-        width: 483px;
-        height: 483px;
+    .hero_img span{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 425px;
+        height: 425px;
+    }
+
+    .hero_img img {
+        max-width: 450px;
+        max-height: 450px;
     }
 
     .about_content {
         width: 100%;
         text-align: center;
+        margin-bottom: 60px;
     }
 
     .navbar {
@@ -1412,11 +1499,11 @@ body {
         border-left: 4px solid #0ef;
         border-right: 4px solid #0ef;
         width: 100%;
+        padding-top: 5px;
         position: absolute;
         top: 70px;
         left: 0;
         z-index: 9;
-        height: 170px;
         transform: scaleX(0);
         transition: transform 1s ease;
         animation: width 1s linear forwards;
@@ -1434,11 +1521,34 @@ body {
 
     .navbar ul {
         display: block;
-        padding: 10px 0 10px 0;
+        padding: 0 30px;
+    }
+
+    .navbar ul li {
+        padding: 0;
+    }
+
+    .navbar a {
+        width: 100%;
+        display: block;
+        padding: 3px 0;
     }
 
     .Bars {
         display: block;
+    }
+
+    .contect_form form input,
+    .contect_form form textarea {
+        width: 90%;
+    }
+
+    .contect_form {
+        margin-top: 20px;
+    }
+
+    .contect_form form{
+        text-align: center;
     }
 }
 
@@ -1468,13 +1578,6 @@ body {
         margin-top: 40px;
     }
 
-    .hero_img:before {
-        width: 483px;
-        height: 483px;
-        left: 39px;
-        animation: morph 8s ease-in-out infinite;
-    }
-
     .hero_img {
         margin: 80px 0px;
         margin-bottom: 0;
@@ -1493,6 +1596,14 @@ body {
     .contect_main {
         flex-direction: column;
     }
+
+    .contect_text{
+        text-align: center;
+    }
+
+    .contact .title{
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -1505,7 +1616,39 @@ body {
         display: none;
     }
 
-    .service .title{
+    .about_img{
+        width: 100%;
+        height: 450px;
+    }
+
+    .about_img img{
+        max-height: 450px;
+        height: 450px;
+    }
+
+    .hero{
+        padding-bottom: 0;
+    }
+
+    .hero_img{
+        margin: 0;
+    }
+
+    .hero_img span{
+        width: 100%;
+        height: 330px;
+    }
+
+    .hero_img img {
+        height: 330px;
+        width: 330px;
+    }
+
+    .container2{
+        margin-top: 60px;
+    }
+
+    .service .title {
         padding: 0;
     }
 
@@ -1552,18 +1695,12 @@ body {
         text-align: center;
     }
 
-    .hero_img:before {
-        width: 330px;
-        height: 330px;
-        left: 0;
-    }
-
     .hero_img img {
         height: 340px;
         width: 340px;
     }
 
-    .portfolio{
+    .portfolio {
         padding: 0 0 60px 0;
     }
 
@@ -1571,22 +1708,36 @@ body {
         padding: 0;
     }
 
-    .row{
+    .row {
         width: 330px;
     }
 
-    .contact .title{
+    .contact .title {
         padding-bottom: 10px;
     }
 
-    .skills{
+    .skills {
         padding: 0 0 60px 0;
     }
 }
 
 @media screen and (max-width: 425px) {
-    .container{
+
+    .container {
         max-width: 340px;
+    }
+
+    .about_img{
+        height: 375px;
+    }
+
+    .about_img img{
+        max-height: 375px;
+        height: 375px;
+    }
+    
+    .hero{
+        padding: 60px 0 0 0;
     }
 
     .hero_img img {
@@ -1594,21 +1745,20 @@ body {
         width: 310px;
     }
 
-    .hero_img:before {
-        width: 309px;
-        height: 309px;
-    }
-
-    .hero_content p{
+    .hero_content p {
         font-size: 18px;
     }
-}
 
-@media screen and (max-width: 2560px) {
+    .row {
+        width: 309px;
+    }
 
-    .hero {
-        display: block;
-        height: auto;
-        padding: 60px 0;
+    .contact .title{
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .list_item{
+        margin: 0;
     }
 }
