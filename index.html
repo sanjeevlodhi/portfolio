@@ -333,14 +333,13 @@
                     </div>
                 </div>
                 <div class="contect_form">
-                    <form method="post" action="https://script.google.com/macros/s/AKfycbxTARxlPiwSViZhlYvrAgLOEzPIi2GadnkpShLaKmVYdNnCrQFrF7-ji0cjW21MhDaH/exec" name="contact-form">
-                        <input type="text" name="Name" placeholder="Enter Your Name" required id="n1">
-                        <input type="email" name="Email" placeholder="Enter Your Email" required id="n2">
+                    <form method="post" action="">
+                        <input id="name" type="text" placeholder="Enter Your Name">
+                        <input id="email" type="email" placeholder="Enter Your Email">
 
-                        <input type="text" name="Subject" placeholder="Enter Your Subject" required id="n3">
-                        <textarea name="Message" id="" cols="40" rows="10" placeholder="Enter Your Message" required
-                            id="n4"></textarea>
-                        <input type="submit" value="Submit" class="send">
+                        <input id="subject" type="text" placeholder="Enter Your Subject">
+                        <textarea name="" id="message" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
+                        <input onclick="sendToWhatsapp()" type="submit" class="send">
                     </form>
                 </div>
             </div>
@@ -348,6 +347,7 @@
     </section>
 
     <!-- JS file link -->
+     <script src="js/whatsapp.js"></script>
     <script src="js/min.js"></script>
 </body>
 
