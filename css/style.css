@@ -1450,6 +1450,8 @@ body {
 
     .about_img{
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .about_img img{
